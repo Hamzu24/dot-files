@@ -1,0 +1,54 @@
+add_newline = true
+
+format = "$username$hostname$shlvl$cmd_duration$battery$conda$directory$git_branch$git_status$character"
+
+[character]
+success_symbol = "[❯](#9ece6a)"
+error_symbol = "[❯](#f7768e)"
+
+[directory]
+style = "#7aa2f7"
+read_only = ""
+read_only_style = '#f7768e'
+
+[git_branch]
+style = "#bb9af7"
+symbol = " "
+
+[git_status]
+disabled = false
+format = '([\[$all_status$ahead_behind\]]($style) )'
+style = 'bold #f7768e'
+untracked = "?${count}"
+stashed = "📦"
+modified = "!${count}"
+staged = ""
+renamed = ""
+deleted = ""
+ahead = "⇡${count}"
+behind = "⇣${count}"
+conflicted = "󱐋"
+
+
+[cmd_duration]
+min_time = 10_000
+format = " [$duration]($style) "
+style = '#e0af68'
+show_notifications = false
+min_time_to_notify = 30_000
+
+[conda]
+symbol = "🐍"
+style = "#bb9af7"
+format = '[$symbol\($environment\)]($style) '
+
+[battery]
+format = '[$symbol]($style) '
+full_symbol = "󰁼"
+charging_symbol = "󰂄"
+unknown_symbol = "󰂑"
+empty_symbol = "󰂎"
+discharging_symbol = "󰂃"
+
+[[battery.display]]
+threshold = 25
